@@ -52,6 +52,64 @@ if(startReadingButton){
 
 }
 /* ==========================
+   LATEST CHAPTERS
+========================== */
+
+const latestChaptersContainer = document.getElementById("latest-chapters-container");
+
+if(latestChaptersContainer){
+
+    fetch("assets/data/chapters.json")
+
+    .then(response => response.json())
+
+    .then(chapters => {
+
+        const latestChapters = chapters
+
+            .filter(chapter => chapter.id <= latestReleasedChapter)
+
+            .slice(-3)
+
+            .reverse();
+
+        latestChapters.forEach(chapter => {
+
+            const card = document.createElement("div");
+
+            card.className = "chapter-card";
+
+            card.innerHTML = `
+
+                <span class="chapter-number">
+                    Chapter ${chapter.id}
+                </span>
+
+                <h3>${chapter.title}</h3>
+
+                <p>${chapter.description}</p>
+
+                <a href="reader.html?id=${chapter.id}" class="read-btn">
+                    Read →
+                </a>
+
+            `;
+
+            latestChaptersContainer.appendChild(card);
+
+        });
+
+    })
+
+    .catch(() => {
+
+        latestChaptersContainer.innerHTML =
+            "<p>Unable to load chapters.</p>";
+
+    });
+
+}
+/* ==========================
    SCROLL REVEAL
 ========================== */
 

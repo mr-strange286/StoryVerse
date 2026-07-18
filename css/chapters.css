@@ -1,0 +1,205 @@
+/* ==========================
+   CHAPTER HERO
+========================== */
+
+.chapters-hero{
+
+    padding:180px 0 80px;
+
+    text-align:center;
+
+    background:#08111F;
+
+}
+
+.chapters-hero h1{
+
+    font-family:'Playfair Display', serif;
+
+    font-size:60px;
+
+    margin-bottom:20px;
+
+}
+
+.chapters-hero p{
+
+    font-size:20px;
+
+    color:#CBD5E1;
+
+}
+
+/* ==========================
+   CHAPTER SECTION
+========================== */
+
+.chapters-section{
+
+    padding:80px 0;
+
+    background:#0F172A;
+
+}
+/* ==========================
+   CHAPTER CARD
+========================== */
+
+.chapter-card{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    background:#08111F;
+
+    border-radius:18px;
+
+    padding:30px;
+
+    margin-bottom:25px;
+
+    transition:0.3s ease;
+
+}
+
+.chapter-card:hover{
+
+    transform:translateY(-5px);
+
+}
+
+.chapter-number{
+
+    display:inline-block;
+
+    color:#F59E0B;
+
+    font-weight:600;
+
+    margin-bottom:12px;
+
+}
+
+.chapter-card h2{
+
+    font-size:30px;
+
+    margin-bottom:10px;
+
+}
+
+.chapter-card p{
+
+    color:#CBD5E1;
+
+    line-height:1.7;
+
+}
+
+.read-button{
+
+    text-decoration:none;
+
+    color:white;
+
+    background:#F59E0B;
+
+    padding:14px 28px;
+
+    border-radius:40px;
+
+    transition:0.3s ease;
+
+}
+.read-button.locked{
+
+    background:#475569;
+
+    color:#CBD5E1;
+
+    cursor:not-allowed;
+
+    pointer-events:none;
+
+}
+
+.locked-button{
+
+    display:inline-block;
+
+    background:#334155;
+
+    color:#CBD5E1;
+
+    padding:14px 28px;
+
+    border-radius:40px;
+
+    font-weight:600;
+
+    cursor:not-allowed;
+
+}
+.read-button:hover{
+
+    background:#D97706;
+
+}
+/* ==========================
+   COMPLETED CHAPTER
+========================== */
+
+.read-button.completed{
+
+    background:#16A34A;
+
+}
+
+.read-button.completed:hover{
+
+    background:#15803D;
+
+}
+/* ==========================
+   RESPONSIVE
+========================== */
+
+@media(max-width:768px){
+
+    .chapter-card{
+
+        flex-direction:column;
+
+        align-items:flex-start;
+
+        gap:20px;
+
+    }
+
+}
+/* ==========================
+   SEARCH BOX
+========================== */
+
+#search-box{
+
+    width:100%;
+
+    max-width:600px;
+
+    margin-top:35px;
+
+    padding:18px 25px;
+
+    border:none;
+
+    border-radius:50px;
+
+    font-size:18px;
+
+    outline:none;
+
+}

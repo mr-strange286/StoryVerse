@@ -1,0 +1,341 @@
+/* ==========================
+   READING PROGRESS BAR
+========================== */
+
+.progress-bar{
+
+    position:fixed;
+
+    top:0;
+
+    left:0;
+
+    width:0;
+
+    height:5px;
+
+    background:#F59E0B;
+
+    z-index:2000;
+
+    transition:width 0.1s linear;
+
+}
+/* ==========================
+   READER PAGE
+========================== */
+
+.reader-page{
+
+    background:#08111F;
+
+    min-height:100vh;
+
+    padding:140px 20px 80px;
+
+}
+
+.reader-container{
+
+    max-width:900px;
+
+    margin:auto;
+
+    background:#0F172A;
+
+    padding:60px;
+
+    border-radius:20px;
+
+    box-shadow:0 15px 40px rgba(0,0,0,.25);
+
+}
+
+.back-button{
+
+    display:inline-block;
+
+    margin-bottom:40px;
+
+    color:#F59E0B;
+
+    text-decoration:none;
+
+    font-weight:600;
+
+}
+
+#chapter-title{
+
+    font-family:'Playfair Display', serif;
+
+    font-size:52px;
+
+    margin-bottom:12px;
+
+}
+/* ==========================
+   READING TIME
+========================== */
+
+.reading-time{
+
+    color:#CBD5E1;
+
+    font-size:16px;
+
+    margin-bottom:35px;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:8px;
+
+}
+
+#chapter-content{
+
+    font-size:20px;
+
+    line-height:2;
+
+    color:#E2E8F0;
+
+    white-space:pre-line;
+
+}
+
+.reader-navigation{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    margin-top:60px;
+
+}
+
+.reader-navigation button{
+
+    background:#F59E0B;
+
+    color:white;
+
+    border:none;
+
+    padding:16px 30px;
+
+    border-radius:40px;
+
+    cursor:pointer;
+
+    font-size:16px;
+
+    transition:
+
+    background .3s ease,
+
+    transform .3s ease;
+
+
+}
+
+.reader-navigation button:hover{
+
+    background:#D97706;
+
+    transform:translateY(-2px);
+
+}
+/* ==========================
+   DISABLED BUTTON
+========================== */
+
+.reader-navigation button:disabled{
+
+    opacity:0.5;
+
+    cursor:not-allowed;
+
+    transform:none;
+
+}
+/* ==========================
+   BACK TO TOP BUTTON
+========================== */
+
+#back-to-top{
+
+    position:fixed;
+
+    bottom:30px;
+
+    right:30px;
+
+    width:55px;
+
+    height:55px;
+
+    border:none;
+
+    border-radius:50%;
+
+    background:#F59E0B;
+
+    color:white;
+
+    font-size:24px;
+
+    cursor:pointer;
+
+    display:none;
+
+    transition:0.3s ease;
+
+    z-index:1000;
+
+}
+
+#back-to-top:hover{
+
+    background:#D97706;
+
+    transform:translateY(-3px);
+
+}
+@media (max-width:768px){
+
+    .reader-container{
+
+        padding:35px 25px;
+
+    }
+
+    #chapter-title{
+
+        font-size:38px;
+
+    }
+
+    #chapter-content{
+
+        font-size:18px;
+
+        line-height:1.9;
+
+    }
+
+    .reader-navigation{
+
+        flex-direction:column;
+
+        gap:15px;
+
+    }
+
+    .reader-navigation button{
+
+        width:100%;
+
+    }
+
+}
+
+.reader-navigation button:focus,
+.back-button:focus{
+
+    outline:3px solid #F59E0B;
+
+    outline-offset:4px;
+
+}
+/* ==========================
+   CHAPTER COMPLETED TOAST
+========================== */
+
+.chapter-completed{
+
+    display:none;
+
+    position:fixed;
+
+    bottom:30px;
+
+    right:30px;
+
+    width:320px;
+
+    padding:18px 22px;
+
+    background:#10203A;
+
+    border-left:5px solid #22C55E;
+
+    border-radius:14px;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.35);
+
+    z-index:2000;
+
+}
+
+.chapter-completed strong{
+
+    display:block;
+
+    color:#22C55E;
+
+    font-size:20px;
+
+    margin-bottom:8px;
+
+}
+
+.chapter-completed span{
+
+    color:#CBD5E1;
+
+    font-size:15px;
+
+    line-height:1.6;
+
+}
+
+/* ==========================
+   CHAPTER LOADER
+========================== */
+
+#chapter-loader{
+
+    position:fixed;
+
+    top:0;
+
+    left:0;
+
+    width:100%;
+
+    height:100%;
+
+    background:#08111F;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    z-index:9999;
+
+    transition:opacity .5s ease;
+
+}
+
+#chapter-loader.hidden{
+
+    opacity:0;
+
+    pointer-events:none;
+
+}

@@ -1,4 +1,10 @@
-import { auth } from "./firebase.js";
+import { auth, db } from "./firebase.js";
+
+import {
+    doc,
+    setDoc,
+    serverTimestamp
+} from "https://www.gstatic.com/firebasejs/12.0.0/firebase-firestore.js";
 
 import {
     createUserWithEmailAndPassword,
@@ -6,19 +12,36 @@ import {
 } from "https://www.gstatic.com/firebasejs/12.0.0/firebase-auth.js";
 
 const email = document.getElementById("email");
+const displayName = document.getElementById("displayName");
 const password = document.getElementById("password");
 const message = document.getElementById("message");
 
 document.getElementById("signupBtn").onclick = async () => {
 
+    if (displayName.value.trim() === "") {
+
+        message.textContent = "Please enter a display name.";
+
+        return;
+
+    }
     try {
 
-        await createUserWithEmailAndPassword(
+        const userCredential = await createUserWithEmailAndPassword(
             auth,
             email.value,
             password.value
         );
 
+        await setDoc(
+            doc(db, "users", userCredential.user.uid),
+            {
+                displayName: displayName.value.trim(),
+                email: email.value,
+                joinedAt: serverTimestamp(),
+                role: "user"
+            }
+        );
         message.textContent = "Account created successfully!";
 
     } catch (e) {

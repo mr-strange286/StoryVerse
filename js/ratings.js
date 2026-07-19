@@ -53,6 +53,11 @@ stars.forEach(star => {
 
             alert("Please login to rate this chapter.");
 
+            sessionStorage.setItem(
+                "redirectAfterLogin",
+                window.location.href
+            );
+
             window.location.href = "login.html";
 
             return;

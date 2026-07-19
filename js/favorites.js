@@ -50,6 +50,11 @@ favoriteBtn.onclick = async () => {
 
         alert("Please login first.");
 
+        sessionStorage.setItem(
+            "redirectAfterLogin",
+            window.location.href
+        );
+
         window.location.href = "login.html";
 
         return;

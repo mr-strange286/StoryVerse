@@ -41,7 +41,20 @@ document.getElementById("loginBtn").onclick = async () => {
 
         message.textContent = "Login successful!";
 
-        window.location.href = "index.html";
+        const redirect =
+            sessionStorage.getItem("redirectAfterLogin");
+
+        if (redirect) {
+
+            sessionStorage.removeItem("redirectAfterLogin");
+
+            window.location.href = redirect;
+
+        } else {
+
+            window.location.href = "index.html";
+
+        }
 
     } catch (e) {
 

@@ -7,32 +7,42 @@ import {
 
 const authLink = document.getElementById("auth-link");
 
-onAuthStateChanged(auth, (user) => {
+if (!authLink) {
 
-    if (user) {
+    console.log("No auth link on this page.");
 
-        authLink.innerHTML = `
-            <a href="#" class="nav-link" id="logout-btn">
-                Logout
-            </a>
-        `;
+} else {
 
-        document.getElementById("logout-btn").onclick = async (e) => {
-            e.preventDefault();
+    onAuthStateChanged(auth, (user) => {
 
-            await signOut(auth);
+        if (user) {
 
-            window.location.reload();
-        };
+            authLink.innerHTML = `
+                <a href="#" class="nav-link" id="logout-btn">
+                    Logout
+                </a>
+            `;
 
-    } else {
+            document.getElementById("logout-btn").onclick = async (e) => {
 
-        authLink.innerHTML = `
-            <a href="login.html" class="nav-link">
-                Login
-            </a>
-        `;
+                e.preventDefault();
 
-    }
+                await signOut(auth);
 
-});
+                window.location.reload();
+
+            };
+
+        } else {
+
+            authLink.innerHTML = `
+                <a href="login.html" class="nav-link">
+                    Login
+                </a>
+            `;
+
+        }
+
+    });
+
+}

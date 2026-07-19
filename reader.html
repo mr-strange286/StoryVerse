@@ -212,20 +212,44 @@
 
             <section class="chapter-rating">
 
-            <h3>Enjoyed this chapter?</h3>
+                <h3>Enjoyed this chapter?</h3>
 
-            <div id="rating-stars">
-                <span data-value="1">★</span>
-                <span data-value="2">★</span>
-                <span data-value="3">★</span>
-                <span data-value="4">★</span>
-                <span data-value="5">★</span>
-            </div>
+                <div id="rating-stars">
+                    <span data-value="1">★</span>
+                    <span data-value="2">★</span>
+                    <span data-value="3">★</span>
+                    <span data-value="4">★</span>
+                    <span data-value="5">★</span>
+                </div>
 
-            <p id="rating-info">Be the first to rate this chapter.</p>
-            <p id="your-rating"></p>
+                <p id="rating-info">Be the first to rate this chapter.</p>
+                <p id="your-rating"></p>
 
-        </section>
+            </section>
+
+            <section class="chapter-comments">
+
+                <h3>Comments</h3>
+
+                <textarea
+                    id="comment-input"
+                    placeholder="Write your comment..."
+                    rows="4">
+                </textarea>
+
+                <br><br>
+
+                <button id="comment-btn">
+                    Post Comment
+                </button>
+
+                <div id="comments-container">
+
+                    <p>No comments yet.</p>
+
+                </div>
+
+            </section>
 
             <div class="reader-navigation">
 
@@ -255,6 +279,7 @@
     <script type="module" src="js/user.js"></script>
     <script type="module" src="js/favorites.js"></script>
     <script type="module" src="js/ratings.js"></script>
+    <script type="module" src="js/comments.js"></script>
     <script src="js/config.js"></script>
     <script src="js/reader.js"></script>
 

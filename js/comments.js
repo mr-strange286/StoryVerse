@@ -61,6 +61,7 @@ commentBtn.onclick = async () => {
         {
             userId: currentUser.uid,
             displayName: userData.displayName,
+            avatar: userData.avatar,
             text: text,
             createdAt: serverTimestamp()
         }
@@ -123,9 +124,15 @@ onSnapshot(commentsQuery, (snapshot) => {
         div.className = "comment-card";
 
         div.innerHTML = `
-            <div class="comment-header">
+            <div class="comment-top">
 
-                <div>
+                <img
+                    class="comment-avatar"
+                    src="images/avatars/${comment.avatar || "avatar1.png"}"
+                    alt="Avatar"
+                >
+
+                <div class="comment-info">
 
                     <strong>${comment.displayName || comment.email}</strong>
 

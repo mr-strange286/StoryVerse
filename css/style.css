@@ -1323,3 +1323,31 @@ footer hr{
     margin-top:4px;
 
 }
+
+.comment-top{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+}
+
+.comment-avatar{
+
+    width:48px;
+
+    height:48px;
+
+    border-radius:50%;
+
+    object-fit:cover;
+
+}
+
+.comment-info{
+
+    flex:1;
+
+}

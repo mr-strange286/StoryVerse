@@ -39,7 +39,8 @@ document.getElementById("signupBtn").onclick = async () => {
                 displayName: displayName.value.trim(),
                 email: email.value,
                 joinedAt: serverTimestamp(),
-                role: "user"
+                role: "user",
+                avatar: "avatar1.png"
             }
         );
         message.textContent = "Account created successfully!";

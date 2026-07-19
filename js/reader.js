@@ -1,3 +1,4 @@
+
 const title = document.getElementById("chapter-title");
 const content = document.getElementById("chapter-content");
 const chapterLoader = document.getElementById("chapter-loader");

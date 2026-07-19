@@ -5,24 +5,34 @@ import {
     signOut
 } from "https://www.gstatic.com/firebasejs/12.0.0/firebase-auth.js";
 
+const authLink = document.getElementById("auth-link");
+
 onAuthStateChanged(auth, (user) => {
 
     if (user) {
 
-        console.log("Logged in:", user.email);
+        authLink.innerHTML = `
+            <a href="#" class="nav-link" id="logout-btn">
+                Logout
+            </a>
+        `;
+
+        document.getElementById("logout-btn").onclick = async (e) => {
+            e.preventDefault();
+
+            await signOut(auth);
+
+            window.location.reload();
+        };
 
     } else {
 
-        console.log("Not logged in");
+        authLink.innerHTML = `
+            <a href="login.html" class="nav-link">
+                Login
+            </a>
+        `;
 
     }
 
 });
-
-window.logout = async function () {
-
-    await signOut(auth);
-
-    window.location.href = "login.html";
-
-};

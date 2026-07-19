@@ -339,3 +339,32 @@
     pointer-events:none;
 
 }
+.chapter-rating{
+    text-align:center;
+    margin:50px 0;
+}
+
+#rating-stars span{
+    font-size:38px;
+    color:#888;
+    cursor:pointer;
+    transition:.2s;
+    margin:0 3px;
+}
+
+#rating-stars span:hover{
+    color:#FFD700;
+    transform:scale(1.2);
+}
+
+#rating-info{
+    margin-top:15px;
+    color:#bbb;
+    line-height:1.6;
+}
+
+#your-rating{
+    margin-top:10px;
+    font-weight:600;
+    color:#FFD700;
+}

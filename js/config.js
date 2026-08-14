@@ -3,4 +3,4 @@
 ========================== */
 
 // Change ONLY this number every week
-const latestReleasedChapter = 76;
+const latestReleasedChapter = 78;
